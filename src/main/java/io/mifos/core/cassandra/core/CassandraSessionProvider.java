@@ -15,7 +15,9 @@
  */
 package io.mifos.core.cassandra.core;
 
+import com.datastax.driver.core.AuthProvider;
 import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.PlainTextAuthProvider;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.exceptions.InvalidQueryException;
 import com.datastax.driver.mapping.Mapper;
@@ -154,8 +156,16 @@ public class CassandraSessionProvider {
   private Cluster getCluster(@Nonnull final String clusterName, @Nonnull final String contactPoints) {
     CodecRegistry.register(new LocalDateTimeCodec());
 
-    final Cluster.Builder clusterBuilder = Cluster.builder()
-        .withClusterName(clusterName);
+    final Cluster.Builder clusterBuilder = Cluster.builder().withClusterName(clusterName);
+
+    if (this.env.containsProperty(CassandraConnectorConstants.CLUSTER_USER_PROP)) {
+      final String user = this.env.getProperty(CassandraConnectorConstants.CLUSTER_USER_PROP);
+      final String pwd = this.env.getProperty(CassandraConnectorConstants.CLUSTER_PASSWORD_PROP);
+
+      final AuthProvider authProvider = new PlainTextAuthProvider(user, pwd);
+      clusterBuilder.withAuthProvider(authProvider);
+    }
+
     ContactPointUtils.process(clusterBuilder, contactPoints);
     return clusterBuilder.build();
   }

@@ -22,6 +22,9 @@ public interface CassandraConnectorConstants {
   String CLUSTER_NAME_PROP = "cassandra.clusterName";
   String CLUSTER_NAME_PROP_DEFAULT = "staging_cluster";
 
+  String CLUSTER_USER_PROP = "cassandra.cluster.user";
+  String CLUSTER_PASSWORD_PROP = "cassandra.cluster.pwd";
+
   String CONTACT_POINTS_PROP = "cassandra.contactPoints";
   String CONTACT_POINTS_PROP_DEFAULT = "127.0.0.1:9042,127.0.0.2:9042,127.0.0.3:9042";
 
