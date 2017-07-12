@@ -86,7 +86,7 @@ public class CassandraJourney {
             .buildInternal()
         );
       } catch (final Throwable th) {
-        this.logger.warn("Schema table for {0} already exists.", this.applicationName.getServiceName());
+        this.logger.warn("Schema table for '{}' already exists.", this.applicationName.getServiceName());
       }
     }
   }
