@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter();
+        jcenter()
     }
 }
 
@@ -59,6 +59,11 @@ publishing {
             version project.version
         }
     }
+}
+
+jar {
+    from sourceSets.main.allSource
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 license {
