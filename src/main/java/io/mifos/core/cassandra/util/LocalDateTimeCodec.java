@@ -23,10 +23,10 @@ import com.datastax.driver.core.ParseUtils;
 import com.datastax.driver.core.ProtocolVersion;
 import com.datastax.driver.core.TypeCodec;
 import com.datastax.driver.core.exceptions.InvalidTypeException;
-import io.mifos.core.lang.DateConverter;
 
 import java.nio.ByteBuffer;
 import java.time.LocalDateTime;
+import org.apache.fineract.cn.lang.DateConverter;
 
 public class LocalDateTimeCodec extends TypeCodec<LocalDateTime> {
 

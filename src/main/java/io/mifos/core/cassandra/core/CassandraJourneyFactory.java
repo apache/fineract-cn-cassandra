@@ -18,7 +18,7 @@
  */
 package io.mifos.core.cassandra.core;
 
-import io.mifos.core.lang.ApplicationName;
+import org.apache.fineract.cn.lang.ApplicationName;
 import org.slf4j.Logger;
 
 @SuppressWarnings("unused")

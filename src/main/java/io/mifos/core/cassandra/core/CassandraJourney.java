@@ -27,7 +27,7 @@ import com.datastax.driver.core.Session;
 import com.datastax.driver.core.TableMetadata;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.schemabuilder.SchemaBuilder;
-import io.mifos.core.lang.ApplicationName;
+import org.apache.fineract.cn.lang.ApplicationName;
 import org.slf4j.Logger;
 
 import java.util.Objects;

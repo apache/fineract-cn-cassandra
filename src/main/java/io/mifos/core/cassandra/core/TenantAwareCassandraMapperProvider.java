@@ -21,7 +21,7 @@ package io.mifos.core.cassandra.core;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.mapping.Mapper;
 import com.datastax.driver.mapping.MappingManager;
-import io.mifos.core.lang.TenantContextHolder;
+import org.apache.fineract.cn.lang.TenantContextHolder;
 import org.slf4j.Logger;
 import org.springframework.core.env.Environment;
 import org.springframework.util.Assert;
