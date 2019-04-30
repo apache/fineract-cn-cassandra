@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.com/apache/fineract-cn-cassandra.svg?branch=develop)](https://travis-ci.com/apache/fineract-cn-cassandra)
+
 # Apache Fineract CN Cassandra
 
 This project provides helps for using Cassandra in Fineract CN services.
