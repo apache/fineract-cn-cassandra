@@ -170,6 +170,15 @@ public class CassandraSessionProvider {
     }
 
     ContactPointUtils.process(clusterBuilder, contactPoints);
+
+    if (this.env.containsProperty(CassandraConnectorConstants.SSL_ENABLED_PROP)) {
+      final String sslEnabled = this.env.getProperty(CassandraConnectorConstants.SSL_ENABLED_PROP);
+
+      if(sslEnabled.equals("true")) {
+        return clusterBuilder.withSSL().build();
+      }
+    }
+
     return clusterBuilder.build();
   }
 

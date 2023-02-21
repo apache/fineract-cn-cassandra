@@ -34,6 +34,8 @@ public interface CassandraConnectorConstants {
   String KEYSPACE_PROP = "cassandra.keyspace";
   String KEYSPACE_PROP_DEFAULT = "seshat";
 
+  String SSL_ENABLED_PROP = "cassandra.sslEnabled";
+
   String CONSISTENCY_LEVEL_READ_PROP = "cassandra.cl.read";
   String CONSISTENCY_LEVEL_WRITE_PROP = "cassandra.cl.write";
   String CONSISTENCY_LEVEL_DELETE_PROP = "cassandra.cl.delete";
